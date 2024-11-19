@@ -1,0 +1,28 @@
+{
+    "68402758": {
+        "weapon_golfclub": {
+            "recipe": [
+                {
+                    "label": "バット",
+                    "item": "weapon_bat",
+                    "amount": "1"
+                }
+            ],
+            "craft_time": 5,
+            "label": "ゴルフクラブ",
+            "amount": "1"
+        },
+        "weapon_bat": {
+            "recipe": [
+                {
+                    "label": "log",
+                    "item": "log",
+                    "amount": "1"
+                }
+            ],
+            "craft_time": 5,
+            "label": "バット",
+            "amount": "1"
+        }
+    }
+}
