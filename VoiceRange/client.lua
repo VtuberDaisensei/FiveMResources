@@ -13,9 +13,12 @@ local config = {
     changeHearingDistance = false, -- This will change your hearing distance based on what you've chosen. This is recommended to be off.
 
     ranges = {
-        {distance = 2.0, name = "🔈"},
-        {distance = 10.0, name = "🔉"},
-        {distance = 30.0, name = "🔊"}
+        {distance = 1.0, name = "superwisper"},
+        {distance = 2.0, name = "smallwisper"},
+        {distance = 5.0, name = "wisper"},
+        {distance = 10.0, name = "normal"},
+        {distance = 15.0, name = "shouting"},
+        {distance = 30.0, name = "supershouting"}
     }
 }
 
