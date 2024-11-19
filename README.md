@@ -1,0 +1,2 @@
+# FiveMResources
+DaisenseiServerに組み込んでいるResourcesです。
