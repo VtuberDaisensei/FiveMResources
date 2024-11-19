@@ -9,16 +9,17 @@ local config = {
     enableBlueCircle = true, -- this will enable the blue circle to show you the distance you're voice can reach.
     makeHudSmallerWhileSpeaking = true, -- This will make the hud a little bit smaller when you're speaking.
 
-    changeSpeakingDistance = true, -- This will change your voice distance based on what you've chosen. This is not recommended to be off unless you also want to turn off hearing and use this whole script only as a hud.
+    changeSpeakingDistance = false, -- This will change your voice distance based on what you've chosen. This is not recommended to be off unless you also want to turn off hearing and use this whole script only as a hud.
     changeHearingDistance = false, -- This will change your hearing distance based on what you've chosen. This is recommended to be off.
 
     ranges = {
-        {distance = 1.0, name = "superwisper"},
-        {distance = 2.0, name = "smallwisper"},
-        {distance = 5.0, name = "wisper"},
-        {distance = 10.0, name = "normal"},
-        {distance = 15.0, name = "shouting"},
-        {distance = 30.0, name = "supershouting"}
+		{ distance = 1.0, name = "SuperWhisper" }, -- Whisper speech distance in gta distance units
+		{ distance = 2.0,  name = "Whisper" },  -- Normal speech distance in gta distance units
+		{ distance = 3.0,  name = "SmallWhisper" },  -- Normal speech distance in gta distance units
+		{ distance = 5.0,  name = "Small" },  -- Normal speech distance in gta distance units
+		{ distance = 10.0, name = "Normal" }, -- Shout speech distance in gta distance units
+		{ distance = 15.0, name = "Shouting" },  -- Normal speech distance in gta distance units
+		{ distance = 30.0, name = "SuperShouting" } -- Shout speech distance in gta distance units
     }
 }
 
@@ -70,7 +71,7 @@ end
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-
+        /*
         -- change voice
         if IsControlJustPressed(0, config.Keybind) or keybindUsed then
             if CurrentChosenDistance == #config.ranges then
@@ -87,20 +88,23 @@ Citizen.CreateThread(function()
                 MumbleSetAudioOutputDistance(CurrentDistanceValue)
             end
         end
+        */
 
         -- Blue circle
-        if config.enableBlueCircle then
+        -- if config.enableBlueCircle then
             if IsControlPressed(1, config.Keybind) or keybindUsed then
                 local pedCoords = GetEntityCoords(PlayerPedId())
                 DrawMarker(1, pedCoords.x, pedCoords.y, pedCoords.z - 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, CurrentDistanceValue * 2.0, CurrentDistanceValue * 2.0, 1.0, 40, 140, 255, 150, false, false, 2, false, nil, nil, false)
             end
-        end
+        -- end
 
+        /*
         -- HUD
         if config.makeHudSmallerWhileSpeaking and isTalking then
             text(CurrentDistanceName, config.scale / 1.2)
         else
             text(CurrentDistanceName, config.scale)
         end
+        */
     end
 end)

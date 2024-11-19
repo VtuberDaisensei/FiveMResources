@@ -77,6 +77,23 @@ RegisterCommand('cycleproximity', function()
 
 	setProximityState(Cfg.voiceModes[mode][1], false)
 	TriggerEvent('pma-voice:setTalkingMode', mode)
+	-- @as 2024-11-20 Show Voice Area
+	Citizen.CreateThread(function()
+		local x = 0
+		while x < 50 do
+			local pedCoords = GetEntityCoords(PlayerPedId())
+			local alpha = 150
+			if x >= 30 then
+				alpha = 150 - (x - 30) * 7
+			end
+			DrawMarker(1, pedCoords.x, pedCoords.y, pedCoords.z - 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Cfg.voiceModes[mode][1] * 2.0, Cfg.voiceModes[mode][1] * 2.0, 1.0, 40, 140, 255, alpha, false, false, 2, false, nil, nil, false)
+			Citizen.Wait(0)
+			x = x + 1
+		end
+	end
+	)
+	-- @ae 2024-11-20 Show Voice Area
+	
 end, false)
 if gameVersion == 'fivem' then
 	RegisterKeyMapping('cycleproximity', 'Cycle Proximity', 'keyboard', GetConvar('voice_defaultCycle', 'F11'))
