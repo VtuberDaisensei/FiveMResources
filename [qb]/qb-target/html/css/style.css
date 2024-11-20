@@ -34,3 +34,8 @@ body {
     white-space: nowrap;
     text-shadow: 0.2vh 0.2vh 0.2vh #000000;
 }
+
+#cursor {
+    display: none !important; /* カーソル（目のやつ）を非表示に */
+}
+
