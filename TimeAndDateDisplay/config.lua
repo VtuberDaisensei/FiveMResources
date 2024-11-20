@@ -6,7 +6,7 @@ Config.ServerName = "Daisensei Server" -- Shows this name if Config.ShowServerNa
 
 Config.ShowPlayerName = false -- Set true to show to player name
 
-Config.ShowPlayerID = true -- Set True to show to player id
+Config.ShowPlayerID = false -- Set True to show to player id
 
 -- One of the following config things below must be set to true
 
