@@ -34,6 +34,7 @@ local Vehicles = {
     { model = 'brioso3',         name = 'Brioso 300 Widebody',           brand = 'Grotti',          price = 125000,  category = 'compacts',       type = 'automobile', shop = 'pdm' },
     { model = 'boor',            name = 'Boor',                          brand = 'Karin',           price = 23000,   category = 'compacts',       type = 'automobile', shop = 'pdm' },
     { model = 'patty',           name = 'Burger Mobile',                 brand = 'Karin',           price = 23000,   category = 'compacts',       type = 'automobile', shop = 'pdm' },
+    { model = 'peanut',          name = 'Peanut',                        brand = 'Origins',         price = 23000,   category = 'compacts',       type = 'automobile', shop = 'pdm' }, -- Mod Vehicle
     --- Sedans (1)
     { model = 'asea',            name = 'Asea',                          brand = 'Declasse',        price = 2500,    category = 'sedans',         type = 'automobile', shop = 'pdm' },
     { model = 'asterope',        name = 'Asterope',                      brand = 'Karin',           price = 11000,   category = 'sedans',         type = 'automobile', shop = 'pdm' },
@@ -255,7 +256,7 @@ local Vehicles = {
     { model = 'coquette2',       name = 'Coquette Classic',              brand = 'Invetero',        price = 165000,  category = 'sportsclassics', type = 'automobile', shop = 'pdm' },
     { model = 'envisage',        name = 'Envisage',                      brand = 'Bollokan',        price = 190000,  category = 'sportsclassics', type = 'automobile', shop = 'pdm' },
     { model = 'driftnebula',     name = 'Nebula Turbo',                  brand = 'Vulcar',          price = 100000,  category = 'sportsclassics', type = 'automobile', shop = 'pdm' },
-    { model = 'dmc12cp',         name = 'Delorean',                      brand = 'DMC',             price = 5000000, category = 'sportsclassics', type = 'automobile', shop = 'pdm' }, -- Mod Vehicle
+    { model = 'dmc12cp',         name = 'Delorean',                      brand = 'Origins',         price = 5000000, category = 'sportsclassics', type = 'automobile', shop = 'pdm' }, -- Mod Vehicle
     --- Sports (6)
     { model = 'alpha',           name = 'Alpha',                         brand = 'Albany',          price = 53000,   category = 'sports',         type = 'automobile', shop = 'luxury' },
     { model = 'banshee',         name = 'Banshee',                       brand = 'Bravado',         price = 56000,   category = 'sports',         type = 'automobile', shop = 'luxury' },
@@ -410,7 +411,7 @@ local Vehicles = {
     { model = 'entity3',         name = 'Entity MT',                     brand = 'Overflod',        price = 200000,  category = 'super',          type = 'automobile', shop = 'luxury' },
     { model = 'virtue',          name = 'Virtue',                        brand = 'Ocelot',          price = 72000,   category = 'super',          type = 'automobile', shop = 'luxury' },
     { model = 'turismo3',        name = 'Turismo Omaggio',               brand = 'Grotti',          price = 284500,  category = 'super',          type = 'automobile', shop = 'luxury' },
-    { model = 'aventadors',      name = 'Aventador S',                   brand = 'Grotti',          price = 450000,  category = 'super',          type = 'automobile', shop = 'luxury' }, -- Mod Vehicle
+    { model = 'aventadors',      name = 'Aventador S',                   brand = 'Origins',         price = 450000,  category = 'super',          type = 'automobile', shop = 'luxury' }, -- Mod Vehicle
     --- Motorcycles (8)
     { model = 'akuma',           name = 'Akuma',                         brand = 'Dinka',           price = 55000,   category = 'motorcycles',    type = 'bike',       shop = 'pdm' },
     { model = 'avarus',          name = 'Avarus',                        brand = 'LCC',             price = 20000,   category = 'motorcycles',    type = 'bike',       shop = 'pdm' },
@@ -575,9 +576,9 @@ local Vehicles = {
     { model = 'mule3',           name = 'Mule',                          brand = 'Maibatsu',        price = 40000,   category = 'vans',           type = 'automobile', shop = 'pdm' },
     { model = 'taco',            name = 'Taco Truck',                    brand = 'Brute',           price = 45000,   category = 'vans',           type = 'automobile', shop = 'pdm' },
     { model = 'boxville6',       name = 'Boxville (LSDS)',               brand = 'Brute',           price = 47500,   category = 'vans',           type = 'automobile', shop = 'pdm' },
-    { model = 'al18',            name = 'Alphard',                       brand = 'Toundra',         price = 67500,   category = 'vans',           type = 'automobile', shop = 'pdm' }, -- Mod Vehicle
-    { model = 'man',             name = 'man',                           brand = 'Toundra',         price = 120000,  category = 'vans',           type = 'automobile', shop = 'pdm' }, -- Mod Vehicle
-    { model = 'burgerw',         name = 'burgerw',                       brand = 'Toundra',         price = 80000,   category = 'vans',           type = 'automobile', shop = 'pdm' }, -- Mod Vehicle
+    { model = 'al18',            name = 'Alphard',                       brand = 'Origins',         price = 67500,   category = 'vans',           type = 'automobile', shop = 'pdm' }, -- Mod Vehicle
+    { model = 'man',             name = 'man',                           brand = 'Origins',         price = 120000,  category = 'vans',           type = 'automobile', shop = 'pdm' }, -- Mod Vehicle
+    { model = 'burgerw',         name = 'burgerw',                       brand = 'Origins',         price = 80000,   category = 'vans',           type = 'automobile', shop = 'pdm' }, -- Mod Vehicle
     --- Cycles (13)
     { model = 'bmx',             name = 'BMX',                           brand = 'Bike',            price = 160,     category = 'cycles',         type = 'bike',       shop = 'pdm' },
     { model = 'cruiser',         name = 'Cruiser',                       brand = 'Bike',            price = 510,     category = 'cycles',         type = 'bike',       shop = 'pdm' },
@@ -728,7 +729,7 @@ local Vehicles = {
     { model = 'policet3',        name = 'Burrito (Bail Enforcement)',    brand = 'Declasse',        price = 60000,   category = 'emergency',      type = 'automobile', shop = 'none' },
     { model = 'polgreenwood',    name = 'Greenwood Cruiser',             brand = 'Bravado',         price = 80000,   category = 'emergency',      type = 'automobile', shop = 'none' },
     { model = 'poldorado',       name = 'Dorado Cruiser',                brand = 'Vapid',           price = 80000,   category = 'emergency',      type = 'automobile', shop = 'none' },
-    { model = 'rmodpolice',      name = 'GT-R Police',                   brand = 'Vapid',           price = 300000,  category = 'emergency',      type = 'automobile', shop = 'none' }, -- Mod Vehicle
+    { model = 'rmodpolice',      name = 'GT-R Police',                   brand = 'Origins',         price = 300000,  category = 'emergency',      type = 'automobile', shop = 'none' }, -- Mod Vehicle
     --- Military (19)
     { model = 'vetir',           name = 'Vetir',                         brand = 'Unknown',         price = 100000,  category = 'military',       type = 'automobile', shop = 'none' },
     { model = 'kosatka',         name = 'Kosatka',                       brand = 'Rune',            price = 100000,  category = 'military',       type = 'automobile', shop = 'none' },
