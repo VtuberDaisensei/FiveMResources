@@ -357,8 +357,9 @@ local Vehicles = {
     { model = 'pipistrello',     name = 'Pipistrello',                   brand = 'Overflod',        price = 240000,  category = 'sports',         type = 'automobile', shop = 'luxury' },
     { model = 'niobe',           name = 'Niobe',                         brand = 'Ubermacht',       price = 180000,  category = 'sports',         type = 'automobile', shop = 'luxury' },
     { model = 'driftvorschlag',  name = 'Vorschlaghammer',               brand = 'Pfister',         price = 250000,  category = 'sports',         type = 'automobile', shop = 'luxury' },
-    { model = 'gtr',             name = 'GT-R',                          brand = 'Annis',           price = 300000,  category = 'sports',         type = 'automobile', shop = 'luxury' }, -- Mod Vehicle
-    { model = 'brzbn',           name = 'GT-86',                         brand = 'Toundra',         price = 300000,  category = 'sports',         type = 'automobile', shop = 'luxury' }, -- Mod Vehicle
+    { model = 'gtr',             name = 'GT-R',                          brand = 'Origins',         price = 300000,  category = 'sports',         type = 'automobile', shop = 'luxury' }, -- Mod Vehicle
+    { model = 'brzbn',           name = 'GT-86',                         brand = 'Origins',         price = 300000,  category = 'sports',         type = 'automobile', shop = 'luxury' }, -- Mod Vehicle
+    { model = '11sportscpd',     name = 'Comet S2 PD Style',             brand = 'Origins',         price = 300000,  category = 'sports',         type = 'automobile', shop = 'luxury' }, -- Mod Vehicle
     --- Super (7)
     { model = 'adder',           name = 'Adder',                         brand = 'Truffade',        price = 280000,  category = 'super',          type = 'automobile', shop = 'luxury' },
     { model = 'autarch',         name = 'Autarch',                       brand = 'Överflöd',        price = 224000,  category = 'super',          type = 'automobile', shop = 'luxury' },
