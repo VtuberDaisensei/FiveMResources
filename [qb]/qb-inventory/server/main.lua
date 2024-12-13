@@ -1,3 +1,4 @@
+/*
 QBCore = exports['qb-core']:GetCoreObject()
 Inventories = {}
 Drops = {}
@@ -32,6 +33,7 @@ CreateThread(function()
     end
 end)
 
+*/
 -- Handlers
 
 AddEventHandler('playerDropped', function()
@@ -434,7 +436,6 @@ QBCore.Functions.CreateCallback('qb-inventory:server:giveItem', function(source,
     if Player(target).state.inv_busy then TriggerClientEvent('qb-inventory:client:updateInventory', target) end
     cb(true)
 end)
-*/
 
 -- Item move logic
 

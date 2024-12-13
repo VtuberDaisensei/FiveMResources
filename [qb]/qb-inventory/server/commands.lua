@@ -1,5 +1,6 @@
 -- Commands
-
+-- @d giveItemコマンドの削除
+/*
 QBCore.Commands.Add('giveitem', 'Give An Item (Admin Only)', { { name = 'id', help = 'Player ID' }, { name = 'item', help = 'Name of the item (not a label)' }, { name = 'amount', help = 'Amount of items' } }, false, function(source, args)
     local id = tonumber(args[1])
     local player = QBCore.Functions.GetPlayer(id)
@@ -47,7 +48,6 @@ QBCore.Commands.Add('giveitem', 'Give An Item (Admin Only)', { { name = 'id', he
         QBCore.Functions.Notify(source, Lang:t('notify.pdne'), 'error')
     end
 end, 'admin')
-
 QBCore.Commands.Add('randomitems', 'Receive random items', {}, false, function(source)
     local player = QBCore.Functions.GetPlayer(source)
     local playerInventory = player.PlayerData.items
@@ -134,3 +134,5 @@ RegisterCommand('inventory', function(source)
         end
     end)
 end, false)
+
+*/

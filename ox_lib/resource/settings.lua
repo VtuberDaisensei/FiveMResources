@@ -20,8 +20,8 @@ local function safeGetKvp(fn, key, default)
 end
 
 local settings = {
-    default_locale = GetConvar('ox:locale', 'en'),
-    notification_position = safeGetKvp(GetResourceKvpString, 'notification_position', 'top-right'),
+    default_locale = GetConvar('qb_locale', 'en'),
+    notification_position = safeGetKvp(GetResourceKvpString, 'notification_position', 'center-right'),
     notification_audio = safeGetKvp(GetResourceKvpInt, 'notification_audio') == 1
 }
 

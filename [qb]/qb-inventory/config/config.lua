@@ -1,5 +1,5 @@
 Config = {
-    UseTarget = GetConvar('UseTarget', 'false') == 'true',
+    UseTarget = GetConvar('UseTarget', 'false') == 'false',
 
     MaxWeight = 120000,
     MaxSlots = 40,

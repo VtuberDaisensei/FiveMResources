@@ -39,6 +39,8 @@ do
 end
 
 if IsDuplicityVersion() then
+    local loots = lib.load('data.secondinv')
+
     server = {
         bulkstashsave = GetConvarInt('inventory:bulkstashsave', 1) == 1,
         loglevel = GetConvarInt('inventory:loglevel', 1),
@@ -46,6 +48,7 @@ if IsDuplicityVersion() then
         randomloot = GetConvarInt('inventory:randomloot', 1) == 1,
         evidencegrade = GetConvarInt('inventory:evidencegrade', 2),
         trimplate = GetConvarInt('inventory:trimplate', 1) == 1,
+        /*
         vehicleloot = json.decode(GetConvar('inventory:vehicleloot', [[
 			[
 				["sprunk", 1, 1],
@@ -65,6 +68,9 @@ if IsDuplicityVersion() then
 				["burger", 1, 1]
 			]
 		]])),
+        */
+        vehicleloot = loots.vehicleloot,
+        dumpsterloot = loots.dumpsterloot,
     }
 
     local accounts = json.decode(GetConvar('inventory:accounts', '["money"]'))
@@ -112,7 +118,7 @@ end
 
 function shared.print(...) print(string.strjoin(' ', ...)) end
 
-function shared.info(...) lib.print.info(string.strjoin(' ', ...)) end
+function shared.info(...) shared.print('^2[info]^7', ...) end
 
 ---Throws a formatted type error.
 ---```lua

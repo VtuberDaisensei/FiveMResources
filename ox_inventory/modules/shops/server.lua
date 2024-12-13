@@ -29,7 +29,8 @@ local function setupShopItems(id, shopType, shopName, groups)
 				slot = i,
 				weight = Item.weight,
 				count = slot.count,
-				price = (server.randomprices and (not slot.currency or slot.currency == 'money')) and (math.ceil(slot.price * (math.random(80, 120)/100))) or slot.price or 0,
+				-- price = (server.randomprices and (not slot.currency or slot.currency == 'money')) and (math.ceil(slot.price * (math.random(80, 120)/100))) or slot.price or 0,
+				price = slot.price,
 				metadata = slot.metadata,
 				license = slot.license,
 				currency = slot.currency,
@@ -108,7 +109,7 @@ local function createShop(shopType, id)
 	return shop[id]
 end
 
-for shopType, shopDetails in pairs(lib.load('data.shops') or {}) do
+for shopType, shopDetails in pairs(lib.load('data.shops')) do
 	registerShopType(shopType, shopDetails)
 end
 

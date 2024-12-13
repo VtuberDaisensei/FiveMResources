@@ -213,6 +213,7 @@ RegisterNUICallback('SetInventoryData', function(data, cb)
     TriggerServerEvent('qb-inventory:server:SetInventoryData', data.fromInventory, data.toInventory, data.fromSlot, data.toSlot, data.fromAmount, data.toAmount)
     cb('ok')
 end)
+-- @d 2024-11-21 giveItemコマンドの削除
 /*
 RegisterNUICallback('GiveItem', function(data, cb)
     local player, distance = QBCore.Functions.GetClosestPlayer(GetEntityCoords(PlayerPedId()))
@@ -271,7 +272,7 @@ RegisterNUICallback('RemoveAttachment', function(data, cb)
 end)
 
 -- Vending
-
+/*
 CreateThread(function()
     exports['qb-target']:AddTargetModel(Config.VendingObjects, {
         options = {
@@ -313,3 +314,4 @@ end
 
 RegisterKeyMapping('openInv', Lang:t('inf_mapping.opn_inv'), 'keyboard', Config.Keybinds.Open)
 RegisterKeyMapping('toggleHotbar', Lang:t('inf_mapping.tog_slots'), 'keyboard', Config.Keybinds.Hotbar)
+*/

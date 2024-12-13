@@ -8,7 +8,7 @@ return {
 			heading = 0,
 			minZ = 29.49,
 			maxZ = 32.09,
-			label = 'Open personal locker'
+			label = '個人ロッカーを開く'
 		},
 		name = 'policelocker',
 		label = 'Personal locker',
@@ -19,18 +19,18 @@ return {
 	},
 
 	{
-		coords = vec3(301.3, -600.23, 43.28),
+		coords = vector3(310.44, -597.67, 43.29),
 		target = {
-			loc = vec3(301.82, -600.99, 43.29),
+			loc = vector3(310.64, -597.67, 43.29),
 			length = 0.6,
 			width = 1.8,
 			heading = 340,
 			minZ = 43.34,
 			maxZ = 44.74,
-			label = 'Open personal locker'
+			label = '個人ロッカーを開く'
 		},
 		name = 'emslocker',
-		label = 'Personal Locker',
+		label = '個人ロッカー',
 		owner = true,
 		slots = 70,
 		weight = 70000,
