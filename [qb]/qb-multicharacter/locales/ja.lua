@@ -26,7 +26,7 @@ local Translations = {
         -- Main
         characters_header = "自分のキャラクター",
         emptyslot = "からのスロット",
-        play_button = "遊ぶ",
+        play_button = "起きる",
         create_button = "キャラクターを作成",
         delete_button = "キャラクターを削除",
 

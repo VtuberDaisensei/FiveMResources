@@ -927,10 +927,25 @@ if Config.UseTarget then
         end
     end)
 else
+    Citizen.CreateThread(function()
+        local area = {}
+        for i = 1, #Config.Locations['checking'] do
+            area[i] = Config.Locations['checking'][i]
+        end
+
+        while true do
+            Citizen.Wait(0)
+            for k, v in pairs(area) do
+                DrawMarker(0, v.x, v.y, v.z + 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.5, 140, 255, 140, 60, false, true, 2, false, nil, nil, false)
+            end
+        end
+    end)
+    
     CreateThread(function()
         local checkingPoly = {}
         for i = 1, #Config.Locations['checking'] do
             local v = Config.Locations['checking'][i]
+            /*
             checkingPoly[#checkingPoly + 1] = BoxZone:Create(vector3(v.x, v.y, v.z), 3.5, 2, {
                 heading = -72,
                 name = 'checkin' .. i,
@@ -938,6 +953,14 @@ else
                 minZ = v.z - 2,
                 maxZ = v.z + 2,
             })
+            */
+            polyScale = 2.0
+            checkingPoly[#checkingPoly + 1] = CircleZone:Create(vector3(v.x, v.y, v.z), polyScale, {
+                name = 'checkin' .. i,
+                debugPoly = false,
+                useZ = true,
+            })
+
             local checkingCombo = ComboZone:Create(checkingPoly, { name = 'checkingCombo', debugPoly = false })
             checkingCombo:onPlayerInOut(function(isPointInside)
                 if isPointInside then
@@ -968,7 +991,7 @@ else
                         bedId = bedKey
                     },
                 })
-                local bedCombo = ComboZone:Create(bedPoly, { name = 'bedCombo', debugPoly = false })
+                /*local bedCombo = ComboZone:Create(bedPoly, { name = 'bedCombo', debugPoly = false })
                 bedCombo:onPlayerInOut(function(isPointInside, _, zone)
                     if isPointInside and not isInHospitalBed then
                         exports['qb-core']:DrawText(Lang:t('text.lie_bed'), 'left')
@@ -979,6 +1002,7 @@ else
                         exports['qb-core']:HideText()
                     end
                 end)
+                */
             end
         end
     end)

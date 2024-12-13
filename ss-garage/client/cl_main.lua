@@ -60,13 +60,13 @@ function CreateZone(index, garage)
                     if IsControlJustReleased(0, 38) then
                         if IsEntityDead(PlayerPedId()) then return end
                         if not IsPedInAnyVehicle(PlayerPedId(), false) then
-                            if Config.Framework == 'qb' then
+                            if SS.Config.Framework == 'qb' then
                                 QBCore:OpenGarage(zone.data.indexgarage)
-                            elseif Config.Framework == 'esx' then
+                            elseif SS.Config.Framework == 'esx' then
                                 ESX:OpenGarage(zone.data.indexgarage)
                             end
                         else
-                            if Config.Garages[CurrentGarage].type ~= 'depot' then
+                            if SS.Config.Garages[CurrentGarage].type ~= 'depot' then
                                 local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
                                 local plate = GetVehicleNumberPlateText(vehicle)
                                 local vehProps = GetVehicleProperties(vehicle)
@@ -80,24 +80,24 @@ function CreateZone(index, garage)
             end)
 
             local text = nil
-            if IsPedInAnyVehicle(PlayerPedId(), false) and Config.Garages[CurrentGarage].type ~= 'depot' then
-                text = Locales[Config.Language]["parkvehicle"]
-            elseif not IsPedInAnyVehicle(PlayerPedId(), false) and Config.Garages[CurrentGarage].type == 'depot' then
-                text = Locales[Config.Language]["openimpound"]
-            elseif not IsPedInAnyVehicle(PlayerPedId(), false) and Config.Garages[CurrentGarage].type ~= 'depot' then
-                text = Locales[Config.Language]["opengarage"]
+            if IsPedInAnyVehicle(PlayerPedId(), false) and SS.Config.Garages[CurrentGarage].type ~= 'depot' then
+                text = Locales[SS.Config.Language]["parkvehicle"]
+            elseif not IsPedInAnyVehicle(PlayerPedId(), false) and SS.Config.Garages[CurrentGarage].type == 'depot' then
+                text = Locales[SS.Config.Language]["openimpound"]
+            elseif not IsPedInAnyVehicle(PlayerPedId(), false) and SS.Config.Garages[CurrentGarage].type ~= 'depot' then
+                text = Locales[SS.Config.Language]["opengarage"]
             end
             if text then
-                if Config.TextUI == "standard" then
+                if SS.Config.TextUI == "standard" then
                     SendNUIMessage({ action = 'helptext', show = true, text = text })
-                elseif Config.TextUI == "qb-drawtextui" then
+                elseif SS.Config.TextUI == "qb-drawtextui" then
                     exports['qb-core']:DrawText(text, 'left')
                 end
             end            
         else
-            if Config.TextUI == "standard" then
+            if SS.Config.TextUI == "standard" then
                 SendNUIMessage({ action = 'helptext', show = false })
-            elseif Config.TextUI == "qb-drawtextui" then
+            elseif SS.Config.TextUI == "qb-drawtextui" then
                 exports['qb-core']:HideText()
             end
             CurrentGarage = nil
@@ -122,14 +122,14 @@ local function CreateBlip(coords, garage)
 end
 
 function CreateBlipsZones()
-    for index, garage in pairs(Config.Garages) do
+    for index, garage in pairs(SS.Config.Garages) do
         local shouldCreate = true
-        if garage.job and Config.Framework == 'esx' then
+        if garage.job and SS.Config.Framework == 'esx' then
             shouldCreate = ESX.PlayerData.job.name == garage.job
-        elseif garage.job and Config.Framework == 'qb' then
+        elseif garage.job and SS.Config.Framework == 'qb' then
             shouldCreate = QBCore.Functions.GetPlayerData().job.name == garage.job
         end
-        if Config.Framework == 'qb' and garage.gang then
+        if SS.Config.Framework == 'qb' and garage.gang then
             shouldCreate = QBCore.Functions.GetPlayerData().gang.name == garage.gang
         end
         if shouldCreate then
@@ -150,8 +150,8 @@ end)
 
 function GetFreeSpot()
     local location = nil
-    for k,v in pairs(Config.Garages[CurrentGarage].spawns) do
-        local chosenSpawnPoint = Config.Garages[CurrentGarage].spawns[k]
+    for k,v in pairs(SS.Config.Garages[CurrentGarage].spawns) do
+        local chosenSpawnPoint = SS.Config.Garages[CurrentGarage].spawns[k]
         local isOccupied = IsPositionOccupied( chosenSpawnPoint.x, chosenSpawnPoint.y, chosenSpawnPoint.z, 5.0, false, true, false, false, false, 0, false )
         if not isOccupied then
             location = chosenSpawnPoint
@@ -168,7 +168,7 @@ function doCarDamage(currentVehicle, stats, props)
     SetVehicleEngineHealth(currentVehicle, engine)
     SetVehicleBodyHealth(currentVehicle, body)
 
-    -- if Config.Framework == 'esx' then props = json.decode(props) end
+    -- if SS.Config.Framework == 'esx' then props = json.decode(props) end
 
     if props.doorStatus then
         for k, v in pairs(props.doorStatus) do

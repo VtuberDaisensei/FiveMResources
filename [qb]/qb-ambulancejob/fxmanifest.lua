@@ -20,6 +20,7 @@ client_scripts {
 	'client/dead.lua',
 	'@PolyZone/client.lua',
 	'@PolyZone/BoxZone.lua',
+	'@PolyZone/CircleZone.lua',
 	'@PolyZone/ComboZone.lua'
 }
 

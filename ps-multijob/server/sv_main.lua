@@ -224,7 +224,9 @@ end)
 RegisterNetEvent("ps-multijob:changeJob",function(cjob, cgrade)
     local source = source
     local Player = QBCore.Functions.GetPlayer(source)
-
+    if cjob ~= "ambulance" then
+        TriggerEvent('hospital:server:RemoveDoctor', Player.PlayerData.job.name)
+    end
     if cjob == "unemployed" and cgrade == 0 then
         Player.Functions.SetJob(cjob, cgrade)
         return

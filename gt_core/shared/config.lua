@@ -10,3 +10,11 @@ GTCore.Config.Blips = {
         isShortRange = false,
     },
 }
+
+GTCore.Config.NPC.Pattern = {
+    ["shop"]
+}
+
+GTCore.Config.NPC.Creation = {
+
+}

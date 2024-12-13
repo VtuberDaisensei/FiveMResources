@@ -27,7 +27,7 @@ end
 --- This will be called each 10 seconds whilst drilling a safety deposit box
 --- @return nil
 function Config.OnDrillingAction()
-    TriggerServerEvent('hud:server:GainStress', math.random(4, 8))
+    TriggerServerEvent('hud:server:GainStress', math.random(0, 2))
 end
 
 --- This is triggered whenever a robbery call is made by the alarm of a bank
@@ -56,4 +56,4 @@ Config.MinimumPaletoPolice = 0
 Config.MinimumPacificPolice = 0
 Config.MinimumFleecaPolice = 0
 Config.MinimumThermitePolice = 0
-Config.OutlawCooldown = 30 -- The amount of minutes it takes for the cops to be able to be called again after they were called 'default 5'
+Config.OutlawCooldown = 5 -- The amount of minutes it takes for the cops to be able to be called again after they were called 'default 5'

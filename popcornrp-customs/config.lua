@@ -23,9 +23,9 @@ Config.Zones = {
 
 -- Default GTA 5 Customs and Benny's Locations
     {
-	blipLabel = "Los Santos Customs - Vinewood",
-    job = { 'mechanic' },
-	blipColor = 5,
+        blipLabel = "Los Santos Customs - Vinewood",
+        job = { 'mechanic' },
+        blipColor = 5,
         points = {
             vec3(-344.36, -121.92, 38.60),
             vec3(-319.43, -130.65, 38.60),
@@ -35,8 +35,8 @@ Config.Zones = {
     },
     /*  
     {
-	blipLabel = "Los Santos Customs - Airport",
-	blipColor = 5,
+        blipLabel = "Los Santos Customs - Airport",
+        blipColor = 5,
         points = {
             vec3(-1147.7, -1990.31, 13.15),
             vec3(-1171.05, -2013.96, 13.15),
@@ -46,8 +46,8 @@ Config.Zones = {
         }
     },
     {
-	blipLabel = "Los Santos Customs - East",
-	blipColor = 5,
+        blipLabel = "Los Santos Customs - East",
+        blipColor = 5,
         points = {
             vec3(724.93, -1092.04, 22.15),
             vec3(738.52, -1094.83, 22.15),
@@ -56,8 +56,8 @@ Config.Zones = {
         }
     },
     {
-	blipLabel = "Los Santos Customs - Sandy Shores",
-	blipColor = 5,
+        blipLabel = "Los Santos Customs - Sandy Shores",
+        blipColor = 5,
         points = {
             vec3(1172.12, 2644.76, 38.55),
             vec3(1171.39, 2635.66, 38.55),
@@ -66,8 +66,8 @@ Config.Zones = {
         }
     },
     {
-	blipLabel = "Los Santos Customs - Paleto",
-	blipColor = 5,
+        blipLabel = "Los Santos Customs - Paleto",
+        blipColor = 5,
         points = {
             vec3(115.55, 6625.32, 31.75),
             vec3(109.19, 6631.69, 31.75),
@@ -76,15 +76,15 @@ Config.Zones = {
         }
     },
     {
-	blipLabel = "Benny's Motorworks",
-	blipColor = 5,
+        blipLabel = "Benny's Motorworks",
+        blipColor = 5,
         points = {
             vec3(-203.55, -1311.26, 30.85),
             vec3(-228.06, -1319.24, 30.85),
             vec3(-228.25, -1334.25, 30.85),
             vec3(-214.18, -1341.38, 30.85),
-	    vec3(-195.42, -1321.19, 30.85),
-	    vec3(-195.26, -1314.11, 30.85),
+            vec3(-195.42, -1321.19, 30.85),
+            vec3(-195.26, -1314.11, 30.85),
         }
     },
     */

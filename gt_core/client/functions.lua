@@ -24,3 +24,7 @@ CreateThread(function()
         GTCore.Functions.SetBlip()
     end
 end)
+
+function GTCore.Functions.CreateNPC()
+    
+end
