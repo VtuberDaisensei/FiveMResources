@@ -1,5 +1,6 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 local zones = {}
+local isInsidePlayer = false
 
 -- Functions
 
@@ -200,10 +201,12 @@ if not Config.useTarget then
         })
 
         combo:onPlayerInOut(function(isPointInside)
+            i = 0
+            isInsidePlayer = isPointInside
             if isPointInside then
                 exports['qb-core']:DrawText('Open Bank')
                 CreateThread(function()
-                    while isPointInside do
+                    while isInsidePlayer do
                         Wait(0)
                         if IsControlJustPressed(0, 38) then
                             OpenBank()
@@ -217,3 +220,4 @@ if not Config.useTarget then
         end)
     end)
 end
+

@@ -1,3 +1,4 @@
+GTCore.Functions = {}
 -- @param coords Required
 -- @param label Optional(Default 'nil of name value')
 -- @param sprite Optional(Default 1)
@@ -6,8 +7,8 @@
 -- @param isShortRange Optional(Default false)
 function GTCore.Functions.SetBlip(coords, label, sprite, color, scale, isShortRange)
     local blip = nil
-    if coord ~= nil then
-        blip = AddBlipForCoord(coords.x, coords.y, coords.z)
+    if coords ~= nil then
+        blip = AddBlipForCoord(coords.x, coords.y, coords.z or 0)
         SetBlipSprite(blip, sprite or 1)
         SetBlipColour(blip, color or 0)
         SetBlipScale(blip, scale or 1)
@@ -18,12 +19,6 @@ function GTCore.Functions.SetBlip(coords, label, sprite, color, scale, isShortRa
     end
     return blip
 end
-
-CreateThread(function()
-    for key, conf in ipairs(GTCore.Config.Blips) do
-        GTCore.Functions.SetBlip()
-    end
-end)
 
 function GTCore.Functions.CreateNPC()
     

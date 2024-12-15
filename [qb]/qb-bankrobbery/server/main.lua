@@ -24,11 +24,11 @@ local function TableLoopStations(toLoop)
         if type(station) == 'table' then
             local hits2 = 0
             for _, station2 in pairs(station) do
-                if Config.PowerStations[station2].hit then hits2 += 1 end
+                if Config.PowerStations[station2].hit then hits2 = hits2 + 1 end
                 if hits2 == #station then return true end
             end
         else
-            if Config.PowerStations[station].hit then hits += 1 end
+            if Config.PowerStations[station].hit then hits = hits + 1 end
             if hits == #toLoop then return true end
         end
     end
@@ -99,7 +99,7 @@ local function AllStationsHit()
     local hit = 0
     for k in pairs(Config.PowerStations) do
         if Config.PowerStations[k].hit then
-            hit += 1
+            hit = hit + 1
         end
     end
     return hit >= Config.HitsNeeded
@@ -180,21 +180,21 @@ RegisterNetEvent('qb-bankrobbery:server:recieveItem', function(type, bankId, loc
                 if Config.RewardTypes[itemType].type == 'item' then
                     local item = Config.LockerRewards['tier' .. tier][math.random(#Config.LockerRewards['tier' .. tier])]
                     local itemAmount = math.random(item.minAmount, item.maxAmount)
-                    exports['qb-inventory']:AddItem(src, item.item, itemAmount, false, false, 'qb-bankrobbery:server:recieveItem')
+                    exports['ox-inventory']:QB_AddItem(src, item.item, itemAmount, false, false, 'qb-bankrobbery:server:recieveItem')
                     TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items[item.item], 'add')
                 elseif Config.RewardTypes[itemType].type == 'money' then
                     local info = {
                         worth = math.random(2300, 3200)
                     }
-                    exports['qb-inventory']:AddItem(src, 'markedbills', math.random(2, 3), false, info, 'qb-bankrobbery:server:recieveItem')
+                    exports['ox-inventory']:QB_AddItem(src, 'markedbills', math.random(2, 3), false, info, 'qb-bankrobbery:server:recieveItem')
                     TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], 'add')
                 end
             else
-                exports['qb-inventory']:AddItem(src, 'security_card_01', 1, false, false, 'qb-bankrobbery:server:recieveItem')
+                exports['ox-inventory']:QB_AddItem(src, 'security_card_01', 1, false, false, 'qb-bankrobbery:server:recieveItem')
                 TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items['security_card_01'], 'add')
             end
         else
-            exports['qb-inventory']:AddItem(src, 'weapon_stungun', 1, false, false, 'qb-bankrobbery:server:recieveItem')
+            exports['ox-inventory']:QB_AddItem(src, 'weapon_stungun', 1, false, false, 'qb-bankrobbery:server:recieveItem')
             TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items['weapon_stungun'], 'add')
         end
     elseif type == 'paleto' then
@@ -212,21 +212,21 @@ RegisterNetEvent('qb-bankrobbery:server:recieveItem', function(type, bankId, loc
                 if Config.RewardTypes[itemType].type == 'item' then
                     local item = Config.LockerRewardsPaleto['tier' .. tier][math.random(#Config.LockerRewardsPaleto['tier' .. tier])]
                     local itemAmount = math.random(item.minAmount, item.maxAmount)
-                    exports['qb-inventory']:AddItem(src, item.item, itemAmount, false, false, 'qb-bankrobbery:server:recieveItem')
+                    exports['ox-inventory']:QB_AddItem(src, item.item, itemAmount, false, false, 'qb-bankrobbery:server:recieveItem')
                     TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items[item.item], 'add')
                 elseif Config.RewardTypes[itemType].type == 'money' then
                     local info = {
                         worth = math.random(4000, 6000)
                     }
-                    exports['qb-inventory']:AddItem(src, 'markedbills', math.random(1, 4), false, info, 'qb-bankrobbery:server:recieveItem')
+                    exports['ox-inventory']:QB_AddItem(src, 'markedbills', math.random(1, 4), false, info, 'qb-bankrobbery:server:recieveItem')
                     TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], 'add')
                 end
             else
-                exports['qb-inventory']:AddItem(src, 'security_card_02', 1, false, false, 'qb-bankrobbery:server:recieveItem')
+                exports['ox-inventory']:QB_AddItem(src, 'security_card_02', 1, false, false, 'qb-bankrobbery:server:recieveItem')
                 TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items['security_card_02'], 'add')
             end
         else
-            exports['qb-inventory']:AddItem(src, 'weapon_vintagepistol', 1, false, false, 'qb-bankrobbery:server:recieveItem')
+            exports['ox-inventory']:QB_AddItem(src, 'weapon_vintagepistol', 1, false, false, 'qb-bankrobbery:server:recieveItem')
             TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items['weapon_vintagepistol'], 'add')
         end
     elseif type == 'pacific' then
@@ -247,35 +247,35 @@ RegisterNetEvent('qb-bankrobbery:server:recieveItem', function(type, bankId, loc
                     local maxAmount
                     if tier == 3 then maxAmount = 7 elseif tier == 2 then maxAmount = 18 else maxAmount = 25 end
                     local itemAmount = math.random(maxAmount)
-                    exports['qb-inventory']:AddItem(src, item.item, itemAmount, false, false, 'qb-bankrobbery:server:recieveItem')
+                    exports['ox-inventory']:QB_AddItem(src, item.item, itemAmount, false, false, 'qb-bankrobbery:server:recieveItem')
                     TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items[item.item], 'add')
                 elseif Config.RewardTypes[itemType].type == 'money' then
                     local info = {
                         worth = math.random(19000, 21000)
                     }
-                    exports['qb-inventory']:AddItem(src, 'markedbills', math.random(1, 4), false, info, 'qb-bankrobbery:server:recieveItem')
+                    exports['ox-inventory']:QB_AddItem(src, 'markedbills', math.random(1, 4), false, info, 'qb-bankrobbery:server:recieveItem')
                     TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], 'add')
                 end
             else
                 local info = {
                     worth = math.random(19000, 21000)
                 }
-                exports['qb-inventory']:AddItem(src, 'markedbills', math.random(1, 4), false, info, 'qb-bankrobbery:server:recieveItem')
+                exports['ox-inventory']:QB_AddItem(src, 'markedbills', math.random(1, 4), false, info, 'qb-bankrobbery:server:recieveItem')
                 TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items['markedbills'], 'add')
                 info = {
                     crypto = math.random(1, 3)
                 }
-                exports['qb-inventory']:AddItem(src, 'cryptostick', 1, false, info, 'qb-bankrobbery:server:recieveItem')
+                exports['ox-inventory']:QB_AddItem(src, 'cryptostick', 1, false, info, 'qb-bankrobbery:server:recieveItem')
                 TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items['cryptostick'], 'add')
             end
         else
             local chance = math.random(1, 2)
             local odd = math.random(1, 2)
             if chance == odd then
-                exports['qb-inventory']:AddItem(src, 'weapon_microsmg', 1, false, false, 'qb-bankrobbery:server:recieveItem')
+                exports['ox-inventory']:QB_AddItem(src, 'weapon_microsmg', 1, false, false, 'qb-bankrobbery:server:recieveItem')
                 TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items['weapon_microsmg'], 'add')
             else
-                exports['qb-inventory']:AddItem(src, 'weapon_minismg', 1, false, false, 'qb-bankrobbery:server:recieveItem')
+                exports['ox-inventory']:QB_AddItem(src, 'weapon_minismg', 1, false, false, 'qb-bankrobbery:server:recieveItem')
                 TriggerClientEvent('qb-inventory:client:ItemBox', src, QBCore.Shared.Items['weapon_minismg'], 'add')
             end
         end

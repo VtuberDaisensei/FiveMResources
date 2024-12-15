@@ -1,3 +1,6 @@
+GTCore.Debug = {}
+GTCore.Debug.Functions = {}
+
 function GTCore.Debug.Functions.PrintTable(tbl)
     if(type(tbl) == 'table') then
         for k, v in pairs(tbl) do
