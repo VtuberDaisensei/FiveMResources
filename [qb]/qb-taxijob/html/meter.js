@@ -1,21 +1,21 @@
 let meterStarted = false;
 
 const updateMeter = (meterData) => {
-    $("#total-price").html("$ " + meterData.currentFare.toFixed(2));
-    $("#total-distance").html(meterData.distanceTraveled.toFixed(2) + " mi");
+    $("#total-price").html("￥ " + meterData.currentFare.toFixed(2));
+    $("#total-distance").html(Math.round(meterData.distanceTraveled.toFixed(2) * 100) / 100 + " km");
 };
 
 const resetMeter = () => {
-    $("#total-price").html("$ 0.00");
-    $("#total-distance").html("0.00 mi");
+    $("#total-price").html("￥ 0.00");
+    $("#total-distance").html("0.00 km");
 };
 
 const toggleMeter = (enabled) => {
     if (enabled) {
-        $(".toggle-meter-btn").html("<p>Started</p>");
+        $(".toggle-meter-btn").html("<p>貸走</p>");
         $(".toggle-meter-btn p").css({ color: "rgb(51, 160, 37)" });
     } else {
-        $(".toggle-meter-btn").html("<p>Stopped</p>");
+        $(".toggle-meter-btn").html("<p>空席</p>");
         $(".toggle-meter-btn p").css({ color: "rgb(231, 30, 37)" });
     }
 };
@@ -44,7 +44,7 @@ const meterToggle = () => {
 
 const openMeter = (meterData) => {
     $(".container").fadeIn(150);
-    $("#total-price-per-100m").html("$ " + meterData.defaultPrice.toFixed(2));
+    $("#total-price-per-100m").html("￥ " + Math.round(meterData.defaultPrice.toFixed(2)));
 };
 
 const closeMeter = () => {

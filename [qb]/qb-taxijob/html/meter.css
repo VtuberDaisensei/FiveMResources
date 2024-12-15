@@ -11,16 +11,16 @@
 
 #g5-meter {
     position: absolute;
-    bottom: 5vh;
-    right: 5vh;
+    left: 5vh;
+    top: 5vh;
     width: var(--meter-size-width);
     height: var(--meter-size-height);
 }
 
 .g5-meter {
     position: absolute;
-    bottom: 5vh;
-    right: 5vh;
+    left: 5vh;
+    top: 5vh;
     width: var(--meter-size-width);
     height: var(--meter-size-height);
 }
@@ -78,7 +78,7 @@
     font-family: "Lato";
     font-weight: bold;
     letter-spacing: 0.1vh;
-    font-size: 4.1vh;
+    font-size: 3.8vh;
     top: 11.5vh;
     right: 25vh;
     float: right;
