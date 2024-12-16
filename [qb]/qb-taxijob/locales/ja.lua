@@ -7,7 +7,7 @@ local Translations = {
         ['not_active_meter'] = 'タクシーメーターが作動していない',
         ['ride_canceled'] = '[客] 何度もクラッシュしているようなら、乗車はキャンセルだ！',
         ['broken_taxi'] = '仕事を再開する前に、タクシーを修理する必要がある！',
-        ['crash_warning'] = '[客] あと%d %sクラッシュしたら支払わないぞ！',
+        ['crash_warning'] = '[客] あと%d more %sクラッシュしたら支払わないぞ！',
         ['time'] = '回',
         ['times'] = '回',
     },
@@ -28,7 +28,7 @@ local Translations = {
         ['taxi_returned'] = 'タクシーの駐車',
         ['on_duty'] = '[E] 出勤する',
         ['off_duty'] = '[E] 退勤する',
-        ['tip_received'] = '安全運転だったのでチップを受け取った',
+        ['tip_received'] = '安全運転だったので $%d チップを受け取った',
         ['tip_not_received'] = '今後チップを受け取りたい場合は、タクシーを衝突させないように',
     },
     menu = {
