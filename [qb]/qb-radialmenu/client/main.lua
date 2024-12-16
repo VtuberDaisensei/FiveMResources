@@ -62,7 +62,7 @@ local function SetupJobMenu()
     if PlayerData.job.type == 'leo' then JobInteractionCheck = 'police' end
     local JobMenu = {
         id = 'jobinteractions',
-        title = 'Work',
+        title = '仕事',
         icon = 'briefcase',
         items = {}
     }

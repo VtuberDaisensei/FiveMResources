@@ -8,45 +8,45 @@ Config.Fliptime = 15000
 Config.MenuItems = {
     {
         id = 'citizen',
-        title = 'Citizen',
+        title = '市民',
         icon = 'user',
         items = {
             {
                 id = 'givenum',
-                title = 'Give Contact Details',
+                title = '連絡先を渡す',
                 icon = 'address-book',
                 type = 'client',
                 event = 'qb-phone:client:GiveContactDetails',
                 shouldClose = true
             }, {
             id = 'getintrunk',
-            title = 'Get In Trunk',
+            title = 'トランクに入る',
             icon = 'car',
             type = 'client',
             event = 'qb-trunk:client:GetIn',
             shouldClose = true
         }, {
             id = 'cornerselling',
-            title = 'Corner Selling',
+            title = '薬物の売買',
             icon = 'cannabis',
             type = 'client',
             event = 'qb-drugs:client:cornerselling',
             shouldClose = true
         }, {
             id = 'togglehotdogsell',
-            title = 'Hotdog Selling',
+            title = 'ホットドッグの売買',
             icon = 'hotdog',
             type = 'client',
             event = 'qb-hotdogjob:client:ToggleSell',
             shouldClose = true
         }, {
             id = 'interactions',
-            title = 'Interaction',
+            title = '護送',
             icon = 'triangle-exclamation',
             items = {
                 {
                     id = 'handcuff',
-                    title = 'Cuff',
+                    title = '手錠',
                     icon = 'user-lock',
                     type = 'client',
                     event = 'police:client:CuffPlayerSoft',
@@ -518,27 +518,28 @@ Config.JobInteractions = {
     ['taxi'] = {
         {
             id = 'togglemeter',
-            title = 'Show/Hide Meter',
+            title = 'メーター表示の切替',
             icon = 'eye-slash',
             type = 'client',
             event = 'qb-taxi:client:toggleMeter',
             shouldClose = false
-        }, {
+        },/* {
         id = 'togglemouse',
         title = 'Start/Stop Meter',
         icon = 'hourglass-start',
         type = 'client',
         event = 'qb-taxi:client:enableMeter',
         shouldClose = true
-    }, {
+    }, */{
         id = 'npc_mission',
-        title = 'NPC Mission',
+        title = '心なきを送迎',
         icon = 'taxi',
         type = 'client',
         event = 'qb-taxi:client:DoTaxiNpc',
         shouldClose = true
     }
     },
+    /*
     ['tow'] = {
         {
             id = 'togglenpc',
@@ -555,7 +556,7 @@ Config.JobInteractions = {
         event = 'qb-tow:client:TowVehicle',
         shouldClose = true
     }
-    },
+    },*/
     ['mechanic'] = {
         {
             id = 'towvehicle',
